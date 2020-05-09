@@ -2,7 +2,10 @@ Rails.application.routes.draw do
   
   root 'home#top'
   get 'home/about'
-  devise_for :users
+  devise_for :users, controllers: {
+        registrations: 'users/registrations'
+      }
+      
   resources :users
   get 'users/:id/follows'=> 'users#follows', as: 'follows'
   get 'users/:id/followers'=> 'users#followers', as: 'followers'

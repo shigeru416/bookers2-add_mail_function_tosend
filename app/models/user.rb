@@ -4,6 +4,13 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable,:validatable
 
+  #Userが新規登録された後にメールを送信
+  after_create :send_thanks_mail
+
+  def send_thanks_mail
+    ThanksMailer.user_thanks_mail(self).deliver
+  end
+
   has_many :books, dependent: :destroy
   has_many :favorites, dependent: :destroy
   has_many :book_comments, dependent: :destroy
