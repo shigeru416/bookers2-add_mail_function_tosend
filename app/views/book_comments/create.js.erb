@@ -1,0 +1,2 @@
+$(".comments_area").html("<%= j(render 'books/book_comments',  book_post: @book_post ) %>")
+$(".comment_form").html("<%= j(render 'books/book_commentform',  book_post: @book_post, book_comment: @book_comment ) %>")

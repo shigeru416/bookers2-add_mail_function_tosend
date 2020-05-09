@@ -1,0 +1,13 @@
+I"ã(function() {
+  $(function() {
+    return $("#user_postal_code").jpostal({
+      postcode: ["#user_postal_code"],
+      address: {
+        "#prefecture_code": "%3",
+        "#city": "%4%5"
+      }
+    });
+  });
+
+}).call(this);
+:ET

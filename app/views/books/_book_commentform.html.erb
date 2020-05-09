@@ -1,0 +1,7 @@
+<%= form_with model: [book_post, book_comment] do |form| %>
+	<%= form.text_area :comment, class: "form-control" %>
+	<%= form.submit "送信する", class: "btn btn-primary btn-sm"  %>
+<% end %>
+
+<!-- form_forの場合 -->
+<!-- form_for book_post, book_comment, remote: true do |f|  -->

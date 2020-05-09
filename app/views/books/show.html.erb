@@ -1,0 +1,33 @@
+
+<div class="row">
+	<div class="col-xs-3">
+
+		<h2>User info</h2>
+		<%= render 'users/profile', user: current_user %>
+
+		<h2>New book</h2>
+		<%= render 'books/newform', book: @book %>
+
+	</div>
+
+	<div class="col-xs-9">
+		<h2>Book detail</h2>
+
+		<table class="table">
+			<tr class="book_post_<%= @book_post.id %>">
+				<%= render "books/book_post", book_post: @book_post, book: @book %> 
+			</tr>
+		</table>
+
+		<section class="comments_area">
+				<%= render "books/book_comments", book_post: @book_post %>		
+		</section>
+
+		<section class="comment_form">
+				<%= render "books/book_commentform", book_post: @book_post, book_comment: @book_comment %>
+		
+		</section>
+
+	</div>
+</div>
+
